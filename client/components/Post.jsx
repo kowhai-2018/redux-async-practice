@@ -1,7 +1,10 @@
 import React from 'react'
 
-const Post = ({title}) => (
-  <div>{title}</div>
+const Post = ({title, summary}) => (
+  <React.Fragment>
+    <h3>{title}</h3>
+    <p>{summary}</p>
+  </React.Fragment>
 )
 
 export default Post
