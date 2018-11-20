@@ -37,3 +37,17 @@ export function fetchPosts (subreddit) {
       })
   }
 }
+
+export function fetchJokes (subreddit) {
+  return (dispatch) => {
+    dispatch(requestJokes())
+    return request
+      .get('https://geek-jokes.sameerkumar.website/api')
+      .then(res => {
+        dispatch(receiveJokes(res.body))
+      })
+      .catch(err => {
+        dispatch(showError(err.message))
+      })
+  }
+}
