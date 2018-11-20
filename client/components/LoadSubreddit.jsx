@@ -4,7 +4,7 @@ import {fetchPosts} from '../actions'
 
 class LoadSubreddit extends React.Component {
   state = {
-    subReddit: ''
+    subReddit: 'newzealand'
   }
 
   changeHandler = e => {
