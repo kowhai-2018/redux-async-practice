@@ -10,9 +10,11 @@ class Post extends React.Component {
   render () {
     return (
       <React.Fragment>
-        <div>{this.props.title}</div>
-        <div>{this.converter(this.props.date).toString()}</div>
-        <br />
+
+        <div className='threadTitle'>{this.props.title}</div>
+        <div className='date'>{this.converter(this.props.date).toString()}</div>
+        <div>{this.props.text}</div><br />
+
       </React.Fragment>
     )
   }

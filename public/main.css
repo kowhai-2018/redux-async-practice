@@ -2,3 +2,13 @@
   color: red;
   font-weight: bold;
 }
+
+.threadTitle{
+  font-size: 30px
+  
+}
+
+.date{
+  font-size: 18px;
+  color: darkslategrey
+}
