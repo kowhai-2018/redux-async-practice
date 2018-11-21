@@ -12,10 +12,38 @@ export const requestPosts = () => {
   }
 }
 
+function sortAlphabetically (items) {
+  // sort by name
+  items.sort(function (a, b) {
+    let nameA = a.title.toUpperCase() // ignore upper and lowercase
+    let nameB = b.title.toUpperCase() // ignore upper and lowercase
+    if (nameA < nameB) {
+      return -1
+    }
+    if (nameA > nameB) {
+      return 1
+    }
+
+    // names must be equal
+    return 0
+  })
+  return items
+}
+
 export const receivePosts = (posts) => {
+  let newPosts = posts.map(post => {
+    let postEntry = {
+      title: post.data.title,
+      content: post.data.selftext,
+      date: post.data.created_utc,
+      url: post.data.url
+    }
+    return postEntry
+  })
+
   return {
     type: RECEIVE_POSTS,
-    posts: posts.map(post => post.data)
+    posts: sortAlphabetically(newPosts)
   }
 }
 
