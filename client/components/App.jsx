@@ -5,10 +5,12 @@ import LoadSubreddit from './LoadSubreddit'
 import SubredditList from './SubredditList'
 import WaitIndicator from './WaitIndicator'
 import Joke from './Joke'
+import JokeDisplay from './JokeDisplay'
 
 const App = () => (
   <div className='app'>
     <ErrorMessage />
+    <JokeDisplay />
     <Joke />
     <LoadSubreddit />
     <WaitIndicator />
