@@ -5,15 +5,16 @@ const router = express.Router()
 
 router.use(express.json())
 
-router.get('/subreddit/:subreddit', (req, res) => {
+router.get('/dog', (req, res) => {
   request
-    .get(`http://www.reddit.com/r/${req.params.subreddit}.json`)
+    .get(`https://dog.ceo/api/breed/husky/images/random`)
     .end((err, result) => {
       if (err) {
+        console.log('dog router err')
         res.status(500).send(err.message)
       } else {
-        console.log('reddit router')
-        res.json(result.body.data.children)
+        console.log('dog router')
+        res.json(result.body)
       }
     })
 })
